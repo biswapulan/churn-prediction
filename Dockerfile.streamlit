@@ -1,0 +1,17 @@
+# Dockerfile.streamlit
+# This builds the Streamlit container
+
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY requirements.docker.txt .
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir --trusted-host pypi.org --trusted-host files.pythonhosted.org -r requirements.docker.txt
+
+COPY . .
+
+EXPOSE 8501
+
+# Command to run Streamlit
+CMD ["streamlit", "run", "dashboard/app.py","--server.port=8501","--server.address=0.0.0.0","--server.headless=true"]

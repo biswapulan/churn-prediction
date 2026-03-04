@@ -1,0 +1,23 @@
+#Virtual environments
+venv/ 
+venv311/
+
+#Python cache
+__pycache__/ 
+*.pyc 
+*.pyo
+
+#Environmental Variables
+.env 
+
+#Raw data (large for github, that's why putted here)
+data/raw/ 
+
+#Mlflow runs
+mlflow/ 
+
+#keep models / but ignore large files
+*.npy
+
+#kaggle credentials
+.kaggle/ 
